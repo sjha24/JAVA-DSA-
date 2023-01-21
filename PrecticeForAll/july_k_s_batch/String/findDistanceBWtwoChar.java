@@ -9,7 +9,7 @@ public class findDistanceBWtwoChar {
         int lastA = nextOccurenceOfChar(str, a, -1);int lastB = nextOccurenceOfChar(str, b, -1);
         int mindDistance = Integer.MAX_VALUE;
         while(lastA<str.length() || lastB<str.length()){
-            mindDistance = Math.min(mindDistance, Math.abs(lastB-lastA-1));
+            mindDistance = Math.min(mindDistance, Math.abs(lastB-lastA)-1);
             if(lastA<lastB)lastA = nextOccurenceOfChar(str, a, lastA);
             else lastB = nextOccurenceOfChar(str, b, lastB);
         }
