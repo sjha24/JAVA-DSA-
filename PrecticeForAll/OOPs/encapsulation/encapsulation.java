@@ -27,6 +27,8 @@ public class encapsulation {
         student s1 = new student();
         s1.name = "Saurav";
         s1.gender = 'M';
+        s1.setRollNum(82);
+        s1.setMarks(94);
         s1.study();
         System.out.println(s1.getResult());
         s1.play("Chess");
