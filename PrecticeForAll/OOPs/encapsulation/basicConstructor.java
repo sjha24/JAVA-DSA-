@@ -18,7 +18,7 @@ class employ {
     }
 
     // <------------------perametrised constructor-------------------------->
-
+    
     employ(String newName, char newGender, String newEmployID, String NewDepartment) {
         name = newName;
         gender = newGender;
@@ -41,7 +41,6 @@ class employ {
     employ(short newAttendnece){
         attendnece = newAttendnece;
     }
-    
     public String getName(){
         return name;
     }
@@ -57,6 +56,37 @@ class employ {
     public int getAttendnece(){
         return attendnece;
     }
+   
+
+    public void setName(String Name) {
+        name = Name;
+    }
+
+    public void setGender(char Gender) {
+        gender = Gender;
+    }
+
+    public void setEmployID(String EmployID) {
+        employID = EmployID;
+    }
+
+    public void setDepartment(String Department) {
+        department = Department;
+    }
+
+    public void setAttendnece(int Attendnece) {
+        attendnece = Attendnece;
+    }
+    //<------------------------copy constructor --------------------->
+    employ(employ other){
+        name = other.name;
+        gender = other.gender;
+        employID = other.employID;
+        department = other.department;
+        attendnece = other.attendnece;
+    }
+
+    
 }
 
 public class basicConstructor {
@@ -77,6 +107,19 @@ public class basicConstructor {
 
         employ e4 = new employ((short)24);//explicit type casting
         char ch = 'a';
-        employ e5 = new employ((short)ch);
+        // employ e5 = new employ((short)ch);
+        //<----------------------calling copyConstructor---------------------------->
+        employ e5 = new employ();
+        e5.setName("Saurav");
+        e5.setGender('M');
+        e5.setDepartment("SDE");
+        e5.setEmployID("S1312");
+        e5.setAttendnece(25);
+        employ e6 = new employ(e5);
+        System.out.println(e6.getName());
+        System.out.println(e6.getGender());
+        System.out.println(e6.getDepartment());
+        System.out.println(e6.getEmployID());
+        System.out.println(e6.getAttendnece());
     }
 }
